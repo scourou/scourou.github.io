@@ -11,19 +11,22 @@
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 400px;
-  width: 100%;
+  text-align: center;
 }
 
-.logo {
-  width: 80%;
+/* Main page content */
+
+.container.main > .content {
+  margin: 0 auto;
 }
 
-.logo svg {
+.main_logo {
+  margin-top: 10px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.main_logo svg {
   color: white;
 }
 
@@ -37,6 +40,8 @@
   text-align: center;
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
+  max-width: 200px;
+  margin: 0 auto;
 }
 
 .content ul li {
@@ -55,14 +60,14 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .logo {
-    width: 60%;
-  }
+
 }
 
 @media only screen and (min-width: 1100px) {
-  .logo {
+  .container.main > .content {
+    width: 50%;
+  }
+  .main_logo {
     margin-top: 100px;
-    width: 40%;
   }
 }
