@@ -1,5 +1,31 @@
+:root {
+  --p-col: #8106ec;
+  --s-col: #cc0bea;
+  --t-col: #be0cec;
+
+  --bg-content: #1d1f21;
+
+  --left-text: #c9cacc;
+}
+
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oxygen Mono', monospace;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.725;
+  text-rendering: geometricPrecision;
+}
+
+strong {
+  color: var(--t-col);
+}
+
+blockquote {
+  font-style: italic;
 }
 
 .tri {
@@ -34,32 +60,117 @@
   color: #fff;
 }
 
-.content ul {
-  padding: 10px 0;
+.main_nav .nav_links {
+  max-width: 200px;
+}
+
+
+/* nav generic */
+
+ul.nav_links {
+  padding: 1em 0;
   list-style-type: none;
   text-align: center;
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
-  max-width: 200px;
   margin: 0 auto;
 }
 
-.content ul li {
+
+ul.nav_links.no_border {
+  border: 0;
+}
+
+ul.nav_links.smaller {
+  font-size: 0.8em;
+}
+
+ul.nav_links.left li {
+  text-align: left;
+  border-top: 1px solid white;
+  padding: 1em;
+  margin: 0 1em;
+}
+
+ul.nav_links li {
   margin-top: 5px;
 }
 
-.content ul li a {
+ul.nav_links li a {
+  text-transform: uppercase;
   color: #fff;
   text-decoration: none;
   font-size: 1.2em;
-  text-transform: uppercase;
 }
 
-.content ul li a:hover {
+ul.nav_links li a:hover {
   text-decoration: underline;
 }
 
+/* headers */
+
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+h1 {
+  color: var(--p-col);
+}
+
+h2 {
+  color: var(--s-col);
+}
+
+/* User manual styles */
+
+.container.left {
+  height: 100vh;
+  width: 100%;
+  align-items: stretch;
+  background: var(--bg-content);
+}
+
+.container.left > .nav {
+  padding-bottom: 1em;
+}
+
+.container.left > .nav > .logo {
+  padding: 1em;
+}
+
+.container.left > .content {
+  color: var(--left-text);
+  text-align: left;
+  padding: 0 2em;
+  background: var(--bg-content);
+}
+
+.container.left > .content a {
+  color: var(--t-col);
+}
+
+
+/* media queries */
+
 @media only screen and (min-width: 600px) {
+  h1, h2, h3 {
+    /*text-align: center;*/
+  }
+
+  .container.left {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .container.left .nav {
+    width: 20%;
+  }
+
+  .container.left .content {
+    width: 80%;
+    overflow: scroll;
+    padding: 0 1em;
+  }
 
 }
 
